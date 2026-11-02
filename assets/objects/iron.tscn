@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cgeavhlbgfuxq"]
+
+[ext_resource type="Script" uid="uid://cekgyv087jne7" path="res://assets/objects/Material_pickup.gd" id="1_apf7h"]
+[ext_resource type="Texture2D" uid="uid://l4cnf7f1wf6" path="res://assets/Rusty Steel Sphere and Texture Panel.png" id="2_crhv7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tb5gc"]
+size = Vector3(1.5, 2, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_apf7h"]
+albedo_texture = ExtResource("2_crhv7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_hjkyt"]
+material = SubResource("StandardMaterial3D_apf7h")
+size = Vector3(0.8, 0.3, 0.3)
+
+[node name="Iron" type="StaticBody3D" unique_id=586497799]
+script = ExtResource("1_apf7h")
+material_type = "iron"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1761038244]
+shape = SubResource("BoxShape3D_tb5gc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=643612566]
+mesh = SubResource("BoxMesh_hjkyt")

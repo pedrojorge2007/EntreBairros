@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://clc41eqk03l71"]
+
+[ext_resource type="PackedScene" uid="uid://cqteebqmhsaft" path="res://scenes/environments/TestLevel.tscn" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://dqe2akm724p4k" path="res://npcs/npc.tscn" id="2_iuonh"]
+[ext_resource type="Script" uid="uid://cy77x1h5v1cvo" path="res://scenes/main/dialog_ui.gd" id="3_k2fmo"]
+[ext_resource type="Script" uid="uid://bsnyvrgio4x3s" path="res://scenes/main/game_manager.gd" id="4_l3cfh"]
+
+[node name="Main" type="Node3D" unique_id=287753956]
+
+[node name="TestLevel" parent="." unique_id=235962532 instance=ExtResource("1_hyk8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03857398, 0, 0.021072388)
+
+[node name="Npc" parent="." unique_id=893977329 instance=ExtResource("2_iuonh")]
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1089891105 groups=["dialog_ui"]]
+script = ExtResource("3_k2fmo")
+
+[node name="DialoguePanel" type="Control" parent="DialogueUI" unique_id=600665825 groups=["dialog_ui"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="DialogueUI/DialoguePanel" unique_id=285507841]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueUI/DialoguePanel/Panel" unique_id=1670696175]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="DialogueUI/DialoguePanel/Panel/VBoxContainer" unique_id=1851805399]
+layout_mode = 2
+
+[node name="MessageLabel" type="Label" parent="DialogueUI/DialoguePanel/Panel/VBoxContainer" unique_id=1317301281]
+layout_mode = 2
+
+[node name="ContinueLabel" type="Label" parent="DialogueUI/DialoguePanel/Panel/VBoxContainer" unique_id=2074092741]
+layout_mode = 2
+
+[node name="gameManager" type="Node" parent="." unique_id=1088521482 groups=["game_manager"]]
+script = ExtResource("4_l3cfh")
+
+[node name="MissionHUD" type="CanvasLayer" parent="." unique_id=1419175661]
+
+[node name="MissionLabel" type="Label" parent="MissionHUD" unique_id=1000383951 groups=["mission_label"]]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 305.0
+offset_bottom = 185.0
+text = "RECUPERAR O CAMPO"
+autowrap_mode = 2

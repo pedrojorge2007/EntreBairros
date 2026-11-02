@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://d3k6pppjps552"]
+
+[ext_resource type="Texture2D" uid="uid://dn51ypsx4tk8w" path="res://assets/Worn Asphalt Road Texture with Curbs.png" id="1_gppxs"]
+[ext_resource type="PackedScene" uid="uid://cothgeglk3sih" path="res://assets/House with driveway by Poly by Google - bnZkUs4qEdG.glb" id="2_ngvx5"]
+[ext_resource type="PackedScene" uid="uid://5bexhd8y1xfc" path="res://assets/Business Building by Quaternius - GoF3zph6WI.glb" id="3_rs2il"]
+[ext_resource type="PackedScene" uid="uid://c5e6bxvb7x75l" path="res://assets/Building Red Corner by J-Toastie - 9JuFwnivP0.glb" id="4_0st4g"]
+[ext_resource type="PackedScene" uid="uid://beqggs7wp3jk" path="res://assets/House by Poly by Google - 6PGyqELX8M-.glb" id="5_vb07q"]
+[ext_resource type="PackedScene" uid="uid://dpbubf2flncko" path="res://assets/House with driveway by Poly by Google - bnZkUs4qEdG (1).glb" id="6_ngvx5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yex4w"]
+albedo_texture = ExtResource("1_gppxs")
+
+[sub_resource type="BoxMesh" id="BoxMesh_u0ya7"]
+material = SubResource("StandardMaterial3D_yex4w")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtglo"]
+size = Vector3(100, 1, 100)
+
+[node name="bairro" type="StaticBody3D" unique_id=1301380411]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=390495856]
+mesh = SubResource("BoxMesh_u0ya7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1954515839]
+shape = SubResource("BoxShape3D_dtglo")
+
+[node name="House with driveway by Poly by Google - bnZkUs4qEdG" parent="." unique_id=934924822 instance=ExtResource("2_ngvx5")]
+transform = Transform3D(1, 0, 0, 0, 0.9999281, -0.011990905, 0, 0.011990905, 0.9999281, -37.79645, 0.6715965, -28.230362)
+
+[node name="Root Scene" parent="." unique_id=1626395912 instance=ExtResource("3_rs2il")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -6.545738, 1.2453508, -33.4513)
+
+[node name="Root Scene2" parent="." unique_id=1091556186 instance=ExtResource("4_0st4g")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 30.622822, 0.49993896, -31.697845)
+
+[node name="Root Scene3" parent="." unique_id=465971760 instance=ExtResource("4_0st4g")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 34.268684, 0.71269417, -1.3340492)
+
+[node name="House by Poly by Google - 6PGyqELX8M-" parent="." unique_id=1284416781 instance=ExtResource("5_vb07q")]
+transform = Transform3D(-0.19625895, 0, 0.038502336, 0, 0.2, 0, -0.038502336, 0, -0.19625895, -6.216469, -0.2869234, 15.010559)
+
+[node name="Root Scene4" parent="." unique_id=200733068 instance=ExtResource("3_rs2il")]
+transform = Transform3D(14.999999, 0, 0, 0, 14.999352, 0.1392954, 0, -0.1392954, 14.999352, -4.6540565, 0.60736895, -1.9273682)
+
+[node name="Root Scene5" parent="." unique_id=1778315077 instance=ExtResource("4_0st4g")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 35.207672, -0.6055336, 33.591995)
+
+[node name="Root Scene6" parent="." unique_id=1860165175 instance=ExtResource("4_0st4g")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0.5754471, 0.311965, 33.037445)
+
+[node name="House with driveway by Poly by Google - bnZkUs4qEdG (1)" parent="." unique_id=305670638 instance=ExtResource("6_ngvx5")]
+transform = Transform3D(0.011942754, 0, 0.6998981, 0, 0.7, 0, -0.6998981, 0, 0.011942754, -37.58435, 0.5073147, 36.299873)

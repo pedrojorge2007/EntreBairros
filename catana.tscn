@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3csjqclrponc"]
+
+[ext_resource type="PackedScene" uid="uid://babvthp3lgcyd" path="res://assets/combate/catana.glb" id="1_jtpcs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u0ya7"]
+size = Vector3(6.608917, 0.52197266, 0.5494385)
+
+[node name="Catana" type="Node3D" unique_id=974809171]
+transform = Transform3D(0.007273253, 0.19986771, 0, -0.19986771, 0.007273253, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Sketchfab_Scene" parent="." unique_id=382913182 instance=ExtResource("1_jtpcs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene" unique_id=859864996]
+transform = Transform3D(0.9999873, 0.0049939044, 0.00021815997, -0.0049939044, 0.9999873, 0.00033227896, -0.00021650197, -0.00033336168, 0.9999999, -0.055103436, -0.13991143, 0.027395586)
+shape = SubResource("BoxShape3D_u0ya7")
+
+[editable path="Sketchfab_Scene"]

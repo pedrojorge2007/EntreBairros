@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cqteebqmhsaft"]
+
+[ext_resource type="Texture2D" uid="uid://wu16j46vknam" path="res://assets/Dry Earth Texture with Sparse Greenery.png" id="1_08f3b"]
+[ext_resource type="PackedScene" uid="uid://c8wh1iaxk5yp0" path="res://character/Player.tscn" id="1_c88uo"]
+[ext_resource type="Texture2D" uid="uid://enhdrfslpppx" path="res://assets/Seamless Urban Road Texture.png" id="2_n58fh"]
+
+[sub_resource type="Environment" id="Environment_n58fh"]
+background_mode = 1
+background_color = Color(0.25874954, 0.32297355, 0.44050735, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogr1d"]
+albedo_texture = ExtResource("1_08f3b")
+
+[sub_resource type="BoxMesh" id="BoxMesh_u0ya7"]
+size = Vector3(205.42334, 1, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtglo"]
+size = Vector3(205.08453, 1, 204.77979)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt34f"]
+albedo_texture = ExtResource("2_n58fh")
+
+[sub_resource type="BoxMesh" id="BoxMesh_dtglo"]
+size = Vector3(12, 0.1, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yex4w"]
+albedo_texture = ExtResource("2_n58fh")
+
+[sub_resource type="BoxMesh" id="BoxMesh_wt34f"]
+material = SubResource("StandardMaterial3D_yex4w")
+size = Vector3(200, 0.1, 12)
+
+[node name="TestLevel" type="Node3D" unique_id=235962532]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=283537946]
+transform = Transform3D(0.8660254, 0.3535534, -0.3535534, 0, 0.7071068, 0.7071068, 0.5, -0.61237246, 0.61237246, 0, 11.127113, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2138169574]
+environment = SubResource("Environment_n58fh")
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=863517724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1928219477]
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 1, 0, 0.01, 0)
+material_override = SubResource("StandardMaterial3D_ogr1d")
+mesh = SubResource("BoxMesh_u0ya7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=547909174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+shape = SubResource("BoxShape3D_dtglo")
+
+[node name="Obstacles" type="Node3D" parent="." unique_id=1173241762]
+
+[node name="Wall01" type="StaticBody3D" parent="Obstacles" unique_id=1691818764]
+
+[node name="Wall02" type="StaticBody3D" parent="Obstacles" unique_id=229923984]
+
+[node name="Player" parent="." unique_id=1998536295 instance=ExtResource("1_c88uo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.194397, 2.5540237, 1.3921814)
+
+[node name="MainStreet" type="MeshInstance3D" parent="." unique_id=123009603]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0.06, 0)
+material_override = SubResource("StandardMaterial3D_wt34f")
+mesh = SubResource("BoxMesh_dtglo")
+
+[node name="SecondaryStreet" type="MeshInstance3D" parent="." unique_id=1302229620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("BoxMesh_wt34f")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SecondaryStreet" unique_id=917391744]

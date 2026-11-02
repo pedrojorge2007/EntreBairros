@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dxw8p0jg4ydwu"]
+
+[ext_resource type="PackedScene" uid="uid://dovs4rsphewne" path="res://assets/combate/bidonjavel.glb" id="1_p00au"]
+
+[node name="EscudoBidao" type="Node3D" unique_id=1574169425]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1131233344 instance=ExtResource("1_p00au")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

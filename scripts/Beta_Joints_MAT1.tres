@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dhaq5u4w6dv5g"]
+
+[ext_resource type="Texture2D" uid="uid://cme0fre1s5oxe" path="res://assets/frame_01.png" id="1_21l8y"]
+
+[resource]
+resource_name = "Beta_Joints_MAT1"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.5532369, 0.3485548, 0.31485683, 1)
+albedo_texture = ExtResource("1_21l8y")
+emission_enabled = true

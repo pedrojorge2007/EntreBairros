@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bokudfam5x2c3"]
+
+[ext_resource type="PackedScene" uid="uid://dhgi1idrlpfu1" path="res://assets/soccer_field.glb" id="1_p0ph1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v64fi"]
+size = Vector3(39.78111, 0.3, 49.054176)
+
+[node name="campo" type="StaticBody3D" unique_id=380201006]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=842955503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.312225, -0.7363353, -21.734154)
+shape = SubResource("BoxShape3D_v64fi")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1812138779 instance=ExtResource("1_p0ph1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.191023, -0.72436714, -21.838715)

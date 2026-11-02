@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bi7yw5614o2b6"]
+
+[ext_resource type="Script" uid="uid://cekgyv087jne7" path="res://assets/objects/Material_pickup.gd" id="1_cte0b"]
+[ext_resource type="Texture2D" uid="uid://dyvf4yav0n5h2" path="res://assets/Stylized Warm Wood Plank Texture.png" id="2_cfkmi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6q06x"]
+size = Vector3(1.5, 2, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow5a4"]
+albedo_texture = ExtResource("2_cfkmi")
+
+[sub_resource type="BoxMesh" id="BoxMesh_l3cfh"]
+material = SubResource("StandardMaterial3D_ow5a4")
+size = Vector3(0.8, 0.3, 0.3)
+
+[node name="Wood" type="StaticBody3D" unique_id=1861507405]
+script = ExtResource("1_cte0b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=137246542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_6q06x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1653919651]
+mesh = SubResource("BoxMesh_l3cfh")

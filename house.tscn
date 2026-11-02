@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dv1vwq0catkqf"]
+
+[ext_resource type="PackedScene" uid="uid://beqggs7wp3jk" path="res://assets/House by Poly by Google - 6PGyqELX8M-.glb" id="1_hfkix"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u0ya7"]
+size = Vector3(101.20291, 98.51695, 75.02308)
+
+[node name="House" type="Node3D" unique_id=106227996]
+
+[node name="House by Poly by Google - 6PGyqELX8M-" parent="." unique_id=1284416781 instance=ExtResource("1_hfkix")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -35.22714, 1.1920929e-07, -0.698128)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House by Poly by Google - 6PGyqELX8M-" unique_id=1890716445]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House by Poly by Google - 6PGyqELX8M-/StaticBody3D" unique_id=937052900]
+transform = Transform3D(0.19720481, 0, 0.033320636, 0, 0.2, 0, -0.033320636, 0, 0.19720481, 155.54355, 47.79453, 18.865534)
+shape = SubResource("BoxShape3D_u0ya7")

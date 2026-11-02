@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://clc41eqk03l71"]
+
+[ext_resource type="PackedScene" uid="uid://cqteebqmhsaft" path="res://scenes/environments/TestLevel.tscn" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://dqe2akm724p4k" path="res://npcs/npc.tscn" id="2_iuonh"]
+[ext_resource type="Script" uid="uid://cy77x1h5v1cvo" path="res://scenes/main/dialog_ui.gd" id="3_k2fmo"]
+[ext_resource type="Script" uid="uid://bsnyvrgio4x3s" path="res://scenes/main/game_manager.gd" id="4_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://cgeavhlbgfuxq" path="res://assets/objects/iron.tscn" id="5_hujxm"]
+[ext_resource type="PackedScene" uid="uid://bi7yw5614o2b6" path="res://assets/objects/wood.tscn" id="6_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://csr7udjp6iue2" path="res://assets/objects/paint.tscn" id="7_b1x3f"]
+[ext_resource type="PackedScene" uid="uid://d3k6pppjps552" path="res://bairro.tscn" id="8_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://bokudfam5x2c3" path="res://campo.tscn" id="9_b1x3f"]
+[ext_resource type="PackedScene" uid="uid://cr8knh5dr8xou" path="res://grupo_rival.tscn" id="10_a8run"]
+[ext_resource type="Script" uid="uid://s8q0dwqot77g" path="res://scenes/main/amigos_tropa.gd" id="11_ouso4"]
+[ext_resource type="PackedScene" uid="uid://bijod5kqoitpg" path="res://amigo.tscn" id="12_blune"]
+
+[node name="Main" type="Node3D" unique_id=287753956]
+transform = Transform3D(0.99684554, 0.0353536, 0.07105772, -0.046063505, 0.9868018, 0.15524277, -0.0646315, -0.15802622, 0.98531747, 171.74115, 0, 12.281586)
+
+[node name="TestLevel" parent="." unique_id=235962532 instance=ExtResource("1_hyk8p")]
+transform = Transform3D(0.9974066, -0.0716023, -0.0072972737, 0.07003634, 0.9889275, -0.13083433, 0.016584527, 0.129984, 0.9913773, 0.117889404, 6.5575676, -3.253872)
+
+[node name="Npc" parent="." unique_id=893977329 instance=ExtResource("2_iuonh")]
+transform = Transform3D(0.99992526, -0.01076143, 0.0064592734, 0.011642889, 0.9875112, -0.15712132, -0.0046875924, 0.15718454, 0.9875595, -0.6159973, 7.3499994, -3.9300022)
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1089891105 groups=["dialog_ui"]]
+script = ExtResource("3_k2fmo")
+
+[node name="DialoguePanel" type="Control" parent="DialogueUI" unique_id=600665825 groups=["dialog_ui"]]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -190.0
+offset_right = -40.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="DialogueUI/DialoguePanel" unique_id=285507841]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueUI/DialoguePanel/Panel" unique_id=1670696175]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="DialogueUI/DialoguePanel/Panel/VBoxContainer" unique_id=1851805399]
+layout_mode = 2
+
+[node name="MessageLabel" type="Label" parent="DialogueUI/DialoguePanel/Panel/VBoxContainer" unique_id=1317301281]
+layout_mode = 2
+
+[node name="ContinueLabel" type="Label" parent="DialogueUI/DialoguePanel/Panel/VBoxContainer" unique_id=2074092741]
+layout_mode = 2
+
+[node name="gameManager" type="Node" parent="." unique_id=1088521482 groups=["game_manager"]]
+script = ExtResource("4_l3cfh")
+
+[node name="MissionHUD" type="CanvasLayer" parent="." unique_id=1419175661]
+
+[node name="MissionLabel" type="Label" parent="MissionHUD" unique_id=1000383951 groups=["mission_label"]]
+offset_left = 43.0
+offset_top = 452.0
+offset_right = 1115.0
+offset_bottom = 640.0
+text = "RECUPERAR O CAMPO"
+autowrap_mode = 2
+
+[node name="Iron" parent="." unique_id=586497799 instance=ExtResource("5_hujxm")]
+transform = Transform3D(1.0000025, 6.798655e-08, 0, -2.9802322e-08, 0.99999976, 0, 8.940697e-08, 1.7881393e-07, 1, 92.24628, 19.036318, -40.35875)
+
+[node name="Wood" parent="." unique_id=1861507405 instance=ExtResource("6_yyfjg")]
+transform = Transform3D(1.000001, 1.5832484e-08, 0, 1.8626451e-09, 0.99999976, 0, 2.9802322e-08, 5.9604645e-08, 1, 61.9059, 4.300048, 61.311478)
+
+[node name="paint" parent="." unique_id=582272293 instance=ExtResource("7_b1x3f")]
+transform = Transform3D(0.98924625, -0.14431149, -0.02385034, 0.14453246, 0.9894691, 0.0077916086, 0.022474855, -0.011154845, 0.9996854, -80.85112, -7.11617, 66.29705)
+
+[node name="bairro" parent="." unique_id=1301380411 instance=ExtResource("8_yyfjg")]
+transform = Transform3D(0.7978093, -0.059083585, 0.0031533726, 0.058963325, 0.790384, -0.108705096, 0.004912898, 0.10863972, 0.7925747, 55.09201, 3.9787455, 48.12658)
+
+[node name="bairro2" parent="." unique_id=118138081 instance=ExtResource("8_yyfjg")]
+transform = Transform3D(0.020060487, -0.043215178, 0.79858077, 0.11667389, 0.7904427, 0.039843936, -0.7911921, 0.11546753, 0.026123375, 52.653122, 18.28092, -53.912918)
+
+[node name="bairro3" parent="." unique_id=241863475 instance=ExtResource("8_yyfjg")]
+transform = Transform3D(0.7979845, -0.05644854, 0.0059685595, 0.056707256, 0.7890435, -0.11914145, 0.0025199093, 0.11926431, 0.7910562, -49.751198, -3.7533998, 52.845016)
+
+[node name="campo" parent="." unique_id=380201006 instance=ExtResource("9_b1x3f")]
+transform = Transform3D(1.0182498, -0.051539365, -0.021020722, 0.050120737, 0.9823298, -0.15916237, 0.024779744, 0.13094828, 1.1857086, -8.444824, 9.53422, -26.142836)
+
+[node name="GrupoRival" parent="." unique_id=2129200452 instance=ExtResource("10_a8run")]
+transform = Transform3D(0.9998434, -0.014876534, 0.009600617, 0.016630553, 0.97514576, -0.22093883, -0.0060752183, 0.22106387, 0.9752404, -0.1474762, 3.159173, 0.49699974)
+
+[node name="AmigosTropa" type="Node3D" parent="." unique_id=1617852047]
+transform = Transform3D(1.0000001, 1.5509633e-25, 7.4505797e-09, 0, 0.99999994, -2.081668e-17, -7.450581e-09, 2.0816678e-17, 1, -0.6118469, 13.107458, 2.0620537)
+script = ExtResource("11_ouso4")
+amigo_model = ExtResource("12_blune")

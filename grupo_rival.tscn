@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cr8knh5dr8xou"]
+
+[ext_resource type="Script" uid="uid://cokg7ltehbw4c" path="res://grupo_rival.gd" id="1_j2euf"]
+[ext_resource type="PackedScene" uid="uid://d1cfahgrlfv8w" path="res://assets/Punk by Quaternius - BTALZymknF.glb" id="2_3e76y"]
+
+[node name="grupoRival" type="Node3D" unique_id=2129200452]
+script = ExtResource("1_j2euf")
+rival_model = ExtResource("2_3e76y")
+
+[node name="Root Scene" parent="." unique_id=718514258 instance=ExtResource("2_3e76y")]
